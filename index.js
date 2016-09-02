@@ -1,7 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Main from './lib/main'
+import { Router, Route, hashHistory } from 'react-router'
+import Contacts from './lib/Contacts'
+import ContactInfo from './lib/ContactInfo'
 
 render((
-  <Main name="Boilerplate"/>
+  <Router history={ hashHistory }>
+    <Route path="/" component={ Contacts } />
+    <Route path="/contactinfo/:contact" component={ ContactInfo } />
+  </Router>
 ), document.getElementById('app'))
