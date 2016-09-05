@@ -1,3 +1,53 @@
 /*
   Main Stylesheet
 */
+@font-face {font-family: "ITC-Benguiat";
+    src: url("//db.onlinewebfonts.com/t/bae5dc1cb5b7398d135249f5e3b83f3f.eot");
+    src:
+    url("//db.onlinewebfonts.com/t/bae5dc1cb5b7398d135249f5e3b83f3f.woff") format("woff");
+}
+
+body {
+  font-family: ITC-Benguiat;
+  width: 400px;
+}
+
+.header__div {
+  background-color: rgb(44, 62, 80);
+  border-radius: 2%;
+  padding: 15px 0;
+}
+
+.contacts__main {
+
+}
+
+.strangerHeader {
+  color: rgb(44, 62, 80);
+  line-height: 25px;
+  margin: 0;
+  text-align: center;
+  -webkit-text-stroke: 1px rgb(255, 0, 0);
+  -webkit-transform:scale(1.5, 1.0);
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.contact__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact__li {
+  border-bottom: 1px solid lightgrey;
+  font-size: 15px;
+  padding: 5px 0;
+  width: 100%;
+}
+
+.contacts{
+  color: black;
+  padding-left: 50px;
+  text-decoration: none;
+}
