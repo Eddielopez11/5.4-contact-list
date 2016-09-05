@@ -27116,31 +27116,24 @@
 	  getInitialState: function getInitialState() {
 	    return {
 	      contacts: [{
-	        id: 1,
 	        name: "Joyce Byers",
 	        pathRoute: "/contactinfo/joyce byers"
 	      }, {
-	        id: 2,
 	        name: "Jim Hopper",
 	        pathRoute: "/contactinfo/jim hopper"
 	      }, {
-	        id: 3,
 	        name: "Mike Wheeler",
 	        pathRoute: "/contactinfo/mike wheeler"
 	      }, {
-	        id: 4,
 	        name: "Jane 'Eleven' Ives",
 	        pathRoute: "/contactinfo/jane ives"
 	      }, {
-	        id: 5,
 	        name: "Dustin Henderson",
 	        pathRoute: "/contactinfo/dustin henderson"
 	      }, {
-	        id: 6,
 	        name: "Lucas Sinclair",
 	        pathRoute: "/contactinfo/lucas sinclair"
 	      }, {
-	        id: 7,
 	        name: "Will Byers",
 	        pathRoute: "/contactinfo/will byers"
 	      }]
@@ -27149,19 +27142,36 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'main',
-	      null,
+	      { className: 'contacts__main' },
 	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        'Contacts'
+	        'div',
+	        { className: 'header__div' },
+	        _react2.default.createElement(
+	          'h1',
+	          { className: 'strangerHeader' },
+	          'Stranger'
+	        ),
+	        _react2.default.createElement(
+	          'h1',
+	          { className: 'strangerHeader' },
+	          'Contacts'
+	        )
 	      ),
-	      this.state.contacts.map(function (contact) {
-	        return _react2.default.createElement(
-	          _reactRouter.Link,
-	          { key: contact.id, id: contact.id, to: contact.pathRoute },
-	          contact.name
-	        );
-	      })
+	      _react2.default.createElement(
+	        'ul',
+	        { className: 'contact__list' },
+	        this.state.contacts.map(function (contact, i) {
+	          return _react2.default.createElement(
+	            'li',
+	            { key: i, id: i, className: 'contact__li' },
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { className: 'contacts', to: contact.pathRoute },
+	              contact.name
+	            )
+	          );
+	        })
+	      )
 	    );
 	  }
 	});
@@ -27191,42 +27201,49 @@
 	      cont: {
 	        "joyce byers": {
 	          contact: "Joyce Byers",
+	          avatar: "http://ia.media-imdb.com/images/M/MV5BMTQ3NzM3MTc2NF5BMl5BanBnXkFtZTcwODMxNjA0NA@@._V1_SY1000_CR0,0,734,1000_AL_.jpg",
 	          email: "JoyceByers@strangerthings.com",
 	          number: "(782)940-2348",
 	          loc: "Hawkins, Indiana"
 	        },
 	        "jim hopper": {
 	          contact: "Jim Hopper",
+	          avatar: "http://ia.media-imdb.com/images/M/MV5BMTM1MDkxMTY2N15BMl5BanBnXkFtZTcwNTcxMjAyMg@@._V1_.jpg",
 	          email: "JimHopper@strangerthings.com",
 	          number: "(782)940-2348",
 	          loc: "Hawkins, Indiana"
 	        },
 	        "mike wheeler": {
 	          contact: "Mike Wheeler",
+	          avatar: "http://67.media.tumblr.com/8206825a8f28ec97df30b273446ec9aa/tumblr_oatqsrBvTK1vb3e4to7_400.jpg",
 	          email: "MikeWheeler@strangerthings.com",
 	          number: "(782)940-2348",
 	          loc: "Hawkins, Indiana"
 	        },
 	        "jane ives": {
 	          contact: "Jane 'Eleven' Ives",
+	          avatar: "http://images.complex.com/complex/rjjdktrbv42nwnzuepxc.jpg",
 	          email: "JaneAKAelevenIves@strangerthings.com",
 	          number: "(782)940-2348",
 	          loc: "Hawkins, Indiana"
 	        },
 	        "dustin henderson": {
 	          contact: "Dustin Henderson",
+	          avatar: "http://images.hellogiggles.com/uploads/2016/08/05064304/dustin.jpg",
 	          email: "DustinHenderson@strangerthings.com",
 	          number: "(782)940-2348",
 	          loc: "Hawkins, Indiana"
 	        },
 	        "lucas sinclair": {
 	          contact: "Lucas Sinclair",
+	          avatar: "https://pbs.twimg.com/media/CoT6Cr7XYAEKWc_.jpg",
 	          email: "LucasSinclair@strangerthings.com",
 	          number: "(782)940-2348",
 	          loc: "Hawkins, Indiana"
 	        },
 	        "will byers": {
 	          contact: "Will Byers",
+	          avatar: "http://www.famousbirthdays.com/faces/schnapp-noah-image.jpg",
 	          email: "WillByers@strangerthings.com",
 	          number: "(782)940-2348",
 	          loc: "Hawkins, Indiana"
@@ -27240,35 +27257,36 @@
 	      'main',
 	      null,
 	      _react2.default.createElement(
-	        'nav',
-	        null,
+	        'div',
+	        { className: 'contact__avatarDiv' },
+	        _react2.default.createElement('img', { className: 'contact__avatar', src: currentContactObject.avatar, alt: currentContactObject.contact }),
 	        _react2.default.createElement(
 	          _reactRouter.Link,
-	          { to: '/' },
-	          'Back to Contacts'
+	          { className: 'contactInfo__back', to: '/' },
+	          'Back'
 	        )
 	      ),
 	      _react2.default.createElement(
 	        'ul',
-	        null,
+	        { className: 'contactInfo__list' },
 	        _react2.default.createElement(
 	          'li',
-	          null,
+	          { className: 'contactInfo__item' },
 	          currentContactObject.contact
 	        ),
 	        _react2.default.createElement(
 	          'li',
-	          null,
+	          { className: 'contactInfo__item' },
 	          currentContactObject.email
 	        ),
 	        _react2.default.createElement(
 	          'li',
-	          null,
+	          { className: 'contactInfo__item' },
 	          currentContactObject.number
 	        ),
 	        _react2.default.createElement(
 	          'li',
-	          null,
+	          { className: 'contactInfo__item' },
 	          currentContactObject.loc
 	        )
 	      )
